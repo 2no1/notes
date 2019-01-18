@@ -6,10 +6,19 @@ ps axch -o cmd,%cpu --sort=-%cpu
     -o cmd,%cpu - ouputs only command and cpu%
     --sort=-%cpu - sorts by cpu usage high to low
 
+# display currently established, closed, orphaned and waiting TCP sockets
+ss -s
+
+# list all open ports
+ss -l
+
+# active connections
+netstat -tulpn
+
 # one line while loop
 while true; do; echo -n "last update: "; date; echo; paste <(df -H) <(ccache -s); echo; tail ~/build_out.txt; done
     paste - allows you to hv 2 outputs side-by-side
-    
+
 # terminal weather
 curl wttr.in
 
