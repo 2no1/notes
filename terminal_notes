@@ -1,0 +1,17 @@
+# order processes by cpu %
+ps axch -o cmd,%cpu --sort=-%cpu
+    ax - print out "human processes"
+    c - hides full path to binary
+    h - hides header
+    -o cmd,%cpu - ouputs only command and cpu%
+    --sort=-%cpu - sorts by cpu usage high to low
+
+# one line while loop
+while true; do; echo -n "last update: "; date; echo; paste <(df -H) <(ccache -s); echo; tail ~/build_out.txt; done
+    paste - allows you to hv 2 outputs side-by-side
+    
+# terminal weather
+curl wttr.in
+
+# public ip
+curl ipinfo.io/ip
