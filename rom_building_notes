@@ -1,0 +1,20 @@
+### basic setup ### (ubuntu 16.04)
+sudo apt update; sudo apt-get install git-core vim htop -y; cd ~; git clone https://github.com/akhilnarang/scripts; cd scripts; bash setup/android_build_env.sh; cd ~; git config --global user.name "idksomething"; git config --global user.email "someemailwhocares@server.com" && 
+
+### edit dns ###
+vim framework/base/core/res/res/values/config.xml
+
+### how to add prebuilt apk ###
+https://github.com/ezio84/scripts/blob/o2/My_mods-commits_and_tips/add-prebuilt-apk_to_the_build.txt
+
+### miui camera ###
+# has to be set on device make file (device/xiaomi/whyred/*something*_whyred.mk)
+# $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk) <<-- this will call it
+git clone https://github.com/PixelExperience-Devices/vendor_MiuiCamera.git -b pie-whyred vendor/xiaomi/MiuiCamera
+
+### syberia build ###
+mkdir syberia; cd syberia && repo init -u https://github.com/syberia-project/manifest.git -b 9.0 && repo sync -c -j16 --force-sync --no-clone-bundle --no-tags && git clone https://github.com/rashedsahaji/android_device_xiaomi_whyred.git -b pie device/xiaomi/whyred && git clone https://github.com/rashedsahaji/android_vendor_xiaomi_whyred.git -b mi8Lite vendor/xiaomi/whyred && git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-16.0 packages/resources/devicesettings && git clone https://github.com/SantiagoPintos/whyred.git -b pie kernel/xiaomi/whyred && cd prebuilts/clang/host/ && rm -rf linux-x86 && git clone https://github.com/AOSiP/platform_prebuilts_clang_host_linux-x86.git -b pie linux-x86 && cd ~/syberia && . build/envsetup.sh
+
+### general build? ###
+# uses 'general' device/vendor tree with Santiago's kernel & latest? clang from AOSiP
+git clone https://github.com/GuaiYiHu/android_device_xiaomi_whyred.git -b lineage-16.0 device/xiaomi/whyred && git clone https://github.com/GuaiYiHu/android_vendor_xiaomi_whyred.git -b lineage-16.0 vendor/xiaomi/whyred && git clone https://github.com/SantiagoPintos/whyred.git -b pie kernel/xiaomi/whyred && cd prebuilts/clang/host/ && rm -rf linux-x86 && git clone https://github.com/AOSiP/platform_prebuilts_clang_host_linux-x86.git -b pie linux-x86
