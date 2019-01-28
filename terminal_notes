@@ -5,6 +5,12 @@ ps axch -o cmd,%cpu --sort=-%cpu
     h - hides header
     -o cmd,%cpu - ouputs only command and cpu%
     --sort=-%cpu - sorts by cpu usage high to low
+    
+# wget "help"
+#  you can use curly braces to download all the URLs that match the pattern
+wget https://www.kernel.org/pub/linux/kernel/v3.0/linux-3.2.{1..15}.tar.bz2
+# -r and -l1 options together enable 1-level deep recursive retrieval, and -A option specifies lists of file name suffixes 2 accept
+wget -r -l1 -A.bz2 http://aaa.com/directory 
 
 # display currently established, closed, orphaned and waiting TCP sockets
 ss -s
