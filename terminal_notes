@@ -30,3 +30,7 @@ curl wttr.in
 
 # public ip
 curl ipinfo.io/ip
+
+# list folder with numerical order
+ls -v *folder
+ls -aslv *folder*
