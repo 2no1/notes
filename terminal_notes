@@ -34,3 +34,6 @@ curl ipinfo.io/ip
 # list folder with numerical order
 ls -v *folder
 ls -aslv *folder*
+
+# create dir and cd into it
+mkdir foo && cd "$_"
