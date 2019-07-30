@@ -37,3 +37,12 @@ ls -aslv *folder*
 
 # create dir and cd into it
 mkdir foo && cd "$_"
+
+# dns to ip and get mail exchange ( MX )
+nslookup
+>*domain*
+...
+# to get MX
+> set type=mx
+> *domain*
+...
