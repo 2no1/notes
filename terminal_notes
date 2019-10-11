@@ -46,3 +46,9 @@ nslookup
 > set type=mx
 > *domain*
 ...
+
+# youtube-dl mp3 download
+youtube-dl --audio-quality 0 --audio-format mp3 -x -o '%(title)s.%(ext)s' --restrict-filenames $1
+
+# webm to mp4
+ffmpeg -i in.webm out.mp4
