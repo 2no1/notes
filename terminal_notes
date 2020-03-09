@@ -52,3 +52,6 @@ youtube-dl --audio-quality 0 --audio-format mp3 -x -o '%(title)s.%(ext)s' --rest
 
 # webm to mp4
 ffmpeg -i in.webm out.mp4
+
+# line number in less
+*inside less* -N *enter*
