@@ -1,0 +1,12 @@
+If the original email is a .msg file, it can not be read using a Text Editor f.e.
+
+Remnux has a msgconvert for that ( msgconvert email.msg )
+
+Check the headers at mxtoolbox header analyzer.
+
+Check SPF and DKIM.
+  SPF :: sender policy framework
+  DKIM :: domain keys identified mail
+the legitimit authenticity of the sender will be verified by SPF and DKIM; if both pass, the sender is very probably legit.
+
+Check mailto "flag"
