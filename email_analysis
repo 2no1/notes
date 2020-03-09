@@ -10,3 +10,10 @@ Check SPF and DKIM.
 the legitimit authenticity of the sender will be verified by SPF and DKIM; if both pass, the sender is very probably legit.
 
 Check mailto "flag"
+
+Check the attachments, copy > paste > base64 -d -i foo
+
+Attachment analysis references:
+  https://zeltser.com/analyzing-malicious-documents/
+  https://blog.joshlemon.com.au/analysing-malicious-email-files/
+  
