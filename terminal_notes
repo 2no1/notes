@@ -55,3 +55,10 @@ ffmpeg -i in.webm out.mp4
 
 # line number in less
 *inside less* -N *enter*
+
+# proxy checker
+for proxy in $(cat proxys.txt); do (curl -s --max-time 30 -x $proxy ifconfig.io/ip > /dev/null 2>&1;if [[ $? -eq 0 ]]; then echo "$proxy IS OK"|tee -a online_proxys.txt; else echo "$proxy NOT OK";fi) & disown;done
+    $() == ´´
+    commands are inside () so the script can "be threaded"
+    disown is need or else the background process finish will show
+    used tee -a so it can append to stdout and to file
